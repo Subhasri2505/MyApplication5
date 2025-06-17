@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
@@ -31,21 +30,27 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Firebase Auth
+        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // Shared Preferences
+        // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
+        // Check if user is already logged in
         if (sharedPreferences.getBoolean(KEY_LOGGED_IN, false)) {
-            startActivity(new Intent(this, DashboardActivity.class));
+            // Directly go to HomeActivity
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
             finish();
+            return;
         }
 
-        // Views
+        // Link UI elements
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
 
+        // Handle login button click
         buttonLogin.setOnClickListener(view -> {
             String email = editTextEmail.getText().toString().trim();
             String password = editTextPassword.getText().toString().trim();
@@ -55,17 +60,17 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            // Firebase Authentication
+            // Attempt Firebase login
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
-                            // Save login state
+                            // Save login status in SharedPreferences
                             sharedPreferences.edit().putBoolean(KEY_LOGGED_IN, true).apply();
 
-                            // Navigate to dashboard
-                            Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(this, DashboardActivity.class));
-                            finish();
+                            // Go to HomeActivity using Intent
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish(); // Close login page so user can't go back
                         } else {
                             Toast.makeText(this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }

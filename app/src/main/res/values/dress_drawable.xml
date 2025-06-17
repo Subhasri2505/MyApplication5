@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="dress_drawables">
+        <item>@drawable/suit_black</item>
+        <item>@drawable/sample_dress</item>
+        <item>@drawable/dress_floral</item>
+        <item>@drawable/dress_1</item>
+    </array>
+</resources>

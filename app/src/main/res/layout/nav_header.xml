@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:orientation="vertical"
-    android:background="#87CEEB"
+    android:layout_height="160dp"
+    android:background="#C678"
     android:gravity="bottom"
+    android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Profile Image -->
     <ImageView
-        android:id="@+id/imageViewProfile"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:src="@drawable/settings"
-        android:contentDescription="Profile"
-        android:padding="4dp" />
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_arr"
+        android:contentDescription="Profile" />
 
-    <!-- Username Text -->
     <TextView
-        android:id="@+id/textViewUsername"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CLICK MENU"
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        android:textSize="25dp"
-        android:gravity="start"
-        android:layout_marginTop="8dp" />
+        android:text="Contains"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingTop="8dp" />
+
 </LinearLayout>
