@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:layout_margin="6dp"
+    android:elevation="2dp"
+    >
+
+    <!-- Product Image -->
+
+    <!-- Product Name -->
+
+    <ImageView
+
+        android:id="@+id/imageProduct"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/family" />
+
+    <TextView
+        android:id="@+id/textProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ALL CATEGORYS"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginTop="6dp" />
+
+    <!-- Price -->
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Under ₹500"
+        android:textColor="#388E3C"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <!-- Offer -->
+    <TextView
+        android:id="@+id/textOffer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹213 with 1 Offer"
+        android:textColor="#FF5722"
+        android:textSize="12sp" />
+
+    <!-- Delivery -->
+    <TextView
+        android:id="@+id/textDelivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Free Delivery"
+        android:textColor="#555"
+        android:textSize="12sp"
+        android:layout_marginTop="2dp" />
+
+    <!-- Rating -->
+    <TextView
+        android:id="@+id/textRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⭐ 3.9 (78)"
+        android:textSize="12sp"
+        android:textColor="#555"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout>
+
