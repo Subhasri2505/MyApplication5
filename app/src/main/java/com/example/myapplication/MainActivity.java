@@ -3,9 +3,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        // Custom navigation icon click opens drawer
+        // Custom nav icon click opens drawer
         navIcon.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
 
-        // Handle navigation menu item clicks
+        // Navigation menu item clicks
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -56,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("category", "Women");
                     intent.putExtra("price", 1099.0);
                     intent.putExtra("description", "Elegant and comfortable. Perfect for all occasions.");
-                    intent.putExtra("image", R.drawable.sample_dress); // make sure this drawable exists
+                    intent.putExtra("image", R.drawable.sample_dress);
                     startActivity(intent);
-                } else if (id == R.id.nav_logout) {
-                    Toast.makeText(MainActivity.this, "Logging Out", Toast.LENGTH_SHORT).show();
-                    finish(); // or redirect to login
+                } else if (id == R.id.nav_login) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
