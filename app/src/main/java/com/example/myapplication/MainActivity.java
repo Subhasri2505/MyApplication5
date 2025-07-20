@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_login) {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
+                } else if (id==R.id.nav_settings) {
+                    Intent intent=new Intent(MainActivity.this, SettingsActivity.class);
+                    startActivity(intent);
+
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);

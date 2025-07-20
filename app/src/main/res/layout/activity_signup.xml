@@ -23,7 +23,7 @@
             android:id="@+id/editTextFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name"
+            android:hint= "Name"
             android:inputType="textPersonName"
             android:padding="12dp"
             android:layout_marginBottom="16dp" />
@@ -45,15 +45,6 @@
             android:inputType="textPassword"
             android:padding="12dp"
             android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/editTextConfirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:layout_marginBottom="24dp" />
 
         <Button
             android:id="@+id/buttonSignup"
